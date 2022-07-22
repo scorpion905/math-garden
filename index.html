@@ -1,0 +1,56 @@
+<html lang='en'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <!-- Custom styling -->
+  <link rel='stylesheet' href='css/styles.css'>
+  <!-- Custom font -->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap'>
+  </script>
+
+  <!-- TODO: Add Javascript files here -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <script src="drawing.js"></script>
+  <script src="math_garden_stub 12.12 checkpoint/vendor/opencv.js"></script>
+  <script src="processing.js"></script>
+  <script src="math.js"></script>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+  <div class='container'>
+
+    <!-- TODO: Add title here -->
+    <h1 id="title">Math Garden </h1>
+    <h2 id='question'><span id='n1'>3</span> + <span id='n2'>2</span> = </h2>
+
+    <!-- TODO: Add a drawing canvas here -->
+    <canvas id="my-canvas" height="150" width="150"></canvas>
+  </div>
+
+  <div class='container'>
+    <button id='checkAnswer' class='btn' value='Check'>Check answer</button>
+  </div>
+
+  <!-- TODO: Set up TF model and drawing logic-->
+<script>
+  loadModel();
+  prepareCanvas();
+  nextQuestion();
+  document.getElementById('checkAnswer').addEventListener('click', function () {
+    checkAnswer();
+    clearCanvas();
+    nextQuestion();
+  })
+</script>
+</body>
+
+</html>
